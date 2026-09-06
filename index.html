@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pra Lá e Pra Cá</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="manifest" href="manifest.json">
+
+    <meta name="theme-color" content="#F8FCFD">
+</head>
+
+<body>
+  
+
+    <button id="btnBaixar" class="btn-baixar">
+        ↓ BAIXAR
+    </button>
+
+
+    <!-- =========================
+         MENU PRINCIPAL
+    ========================== -->
+
+    <main id="menu" class="tela">
+
+        <h1>
+            <img src="titulo.png" alt="Pra Lá e Pra Cá">
+        </h1>
+
+        <div class="botoes-menu">
+
+            <button id="btnJogar">
+                Jogar
+            </button>
+
+            <button id="btnDificuldade">
+                Dificuldade
+            </button>
+
+            <button id="btnAjustes">
+                Ajustes
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         TELA DE DIFICULDADE
+    ========================== -->
+
+    <main id="telaDificuldade" class="tela escondida">
+
+        <button class="voltar" id="voltarDificuldade">
+            ←
+        </button>
+
+        <h2>Dificuldade</h2>
+
+        <div class="opcoes">
+
+            <button
+                class="btn-dificuldade"
+                data-dificuldade="facil">
+                Fácil
+            </button>
+
+            <button
+                class="btn-dificuldade"
+                data-dificuldade="medio">
+                Médio
+            </button>
+
+            <button
+                class="btn-dificuldade"
+                data-dificuldade="dificil">
+                Difícil
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         TELA DE AJUSTES
+    ========================== -->
+
+    <main id="telaAjustes" class="tela escondida">
+
+        <button class="voltar" id="voltarAjustes">
+            ←
+        </button>
+
+        <h2>Ajustes</h2>
+
+        <div class="ajustes">
+
+            <div class="ajuste">
+
+                <p>Quantas peças?</p>
+
+                <div class="contador">
+
+                    <button id="menosPecas">
+                        −
+                    </button>
+
+                    <span id="quantidadePecas">
+                        6
+                    </span>
+
+                    <button id="maisPecas">
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="ajuste">
+
+                <p>Som</p>
+
+                <button
+                    id="toggleSom"
+                    class="toggle"
+                    data-ligado="true">
+                    ON
+                </button>
+
+            </div>
+
+
+            <div class="ajuste">
+
+                <p>Música</p>
+
+                <button
+                    id="toggleMusica"
+                    class="toggle"
+                    data-ligado="true">
+                    ON
+                </button>
+
+            </div>
+
+
+            <!-- CONTATO -->
+
+            <button
+                id="btnContato"
+                class="btn-contato">
+                Contato
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         TELA DE CONTATO
+    ========================== -->
+
+  <main id="telaContato" class="tela escondida">
+
+    <button class="voltar" id="voltarContato">
+        ←
+    </button>
+
+    <h2>Contato</h2>
+
+    <p class="texto-contato">
+        Tem alguma dúvida,<br>
+        sugestão ou interesse<br>
+        no projeto?
+    </p>
+
+    <div class="creditos-contato">
+
+        <div class="credito">
+            <strong>Jogo programado por:</strong>
+
+            <a
+                href="https://github.com/luizamorimgit"
+                target="_blank"
+                rel="noopener noreferrer">
+                github.com/luizamorimgit
+            </a>
+        </div>
+
+        <div class="credito">
+            <strong>Ideia por:</strong>
+
+            <a
+                href="https://www.instagram.com/renatamatos.educadora/"
+                target="_blank"
+                rel="noopener noreferrer">
+                @renatamatos.educadora
+            </a>
+        </div>
+
+        <div class="credito">
+            <strong>E-mail para contato:</strong>
+
+            <a href="mailto:analuizamorim04@gmail.com">
+                analuizamorim04@gmail.com
+            </a>
+        </div>
+
+    </div>
+
+  </main>
+
+
+    <!-- =========================
+         TELA "PRONTOS?"
+    ========================== -->
+
+    <main id="telaProntos" class="tela escondida">
+
+        <button class="voltar" id="sairJogo">
+            ←
+        </button>
+
+        <h2>Prontos?</h2>
+
+        <button id="btnSim">
+            Sim!
+        </button>
+
+    </main>
+
+
+    <!-- =========================
+         CONTAGEM REGRESSIVA
+    ========================== -->
+
+    <main id="telaContagem" class="tela escondida">
+
+        <div id="numeroContagem">
+            3...
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         TELA DO JOGO
+    ========================== -->
+
+    <main id="telaJogo" class="tela escondida">
+
+        <button class="voltar" id="sairDuranteJogo">
+            ←
+        </button>
+
+        <div id="setaAtual">
+            <!-- A seta será colocada pelo JavaScript -->
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         TELA "ACABOU!"
+    ========================== -->
+
+    <main id="telaAcabou" class="tela escondida">
+
+        <h2>ACABOU!</h2>
+
+    </main>
+
+
+    <!-- =========================
+         TELA "HORA DE CONTAR!"
+    ========================== -->
+
+    <main id="telaContar" class="tela escondida">
+
+        <h2>Hora de contar!</h2>
+
+        <button
+            id="btnContinuar"
+            aria-label="Continuar">
+            👍
+        </button>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

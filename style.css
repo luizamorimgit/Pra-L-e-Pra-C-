@@ -1,0 +1,808 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: 'Nunito', sans-serif;
+
+    background: #F8FCFD;
+
+    color: #405563;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+button {
+    border: none;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
+
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease,
+        background 0.15s ease;
+}
+
+
+/* ==========================================
+   TELAS
+========================================== */
+
+.tela {
+    width: 100%;
+    max-width: 520px;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 35px 22px;
+
+    position: relative;
+}
+
+.escondida {
+    display: none;
+}
+
+
+/* ==========================================
+   BOTÃO "BAIXAR"
+========================================== */
+
+.btn-baixar {
+    position: fixed;
+
+    top: 10px;
+    left: 10px;
+
+    z-index: 9999;
+
+    padding: 4px 7px;
+
+    border-radius: 9px;
+
+    background: #FFFFFF;
+
+    color: #405563;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 2px 0 #C9DCE1,
+        0 4px 8px rgba(64, 85, 99, 0.06);
+}
+
+.btn-baixar:active {
+    transform: translateY(2px);
+
+    box-shadow:
+        0 1px 0 #C9DCE1;
+}
+
+.btn-baixar.escondido {
+    display: none;
+}
+
+
+/* ==========================================
+   MENU PRINCIPAL
+========================================== */
+
+#menu {
+    justify-content: flex-start;
+
+    padding-top: 55px;
+}
+
+
+/* ==========================================
+   IMAGEM DO TÍTULO
+   titulo.png
+========================================== */
+
+#menu h1 {
+    position: absolute;
+
+    top: 5px;
+    left: 0;
+    right: 0;
+
+    margin: 0;
+
+    text-align: center;
+}
+
+#menu h1 img {
+    width: min(300px, 72vw);
+
+    height: auto;
+
+    display: block;
+
+    margin: 0 auto;
+}
+
+
+/* ==========================================
+   BOTÕES DO MENU
+========================================== */
+
+.botoes-menu {
+    width: 100%;
+    max-width: 310px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 25px;
+
+    position: absolute;
+
+    top: 55%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.botoes-menu button {
+    width: 100%;
+
+    min-height: 67px;
+
+    padding: 14px 22px;
+
+    border-radius: 23px;
+
+    background: #FFFFFF;
+
+    color: #405563;
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 6px 0 #C9DCE1,
+        0 12px 25px rgba(64, 85, 99, 0.08);
+}
+
+.botoes-menu button:active {
+    transform: translateY(5px);
+
+    box-shadow:
+        0 1px 0 #C9DCE1,
+        0 5px 12px rgba(64, 85, 99, 0.08);
+}
+
+
+/* ==========================================
+   CRÉDITOS
+========================================== */
+
+#menu::after {
+    content:
+        "Feito por: luizamorimgit & ChatGPT\A"
+        "Ideia por: @renatamatos.educadora";
+
+    white-space: pre;
+
+    position: absolute;
+
+    bottom: 15px;
+
+    left: 0;
+    right: 0;
+
+    text-align: center;
+
+    color: #405563;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    opacity: 0.6;
+}
+
+
+/* ==========================================
+   TÍTULOS
+========================================== */
+
+h2 {
+    font-size: clamp(30px, 8vw, 38px);
+
+    font-weight: 800;
+
+    text-align: center;
+
+    color: #405563;
+
+    margin-bottom: 42px;
+}
+
+
+/* ==========================================
+   BOTÃO VOLTAR
+========================================== */
+
+.voltar {
+    position: absolute;
+
+    top: 35px;
+    left: 20px;
+
+    width: 52px;
+    height: 52px;
+
+    border-radius: 50%;
+
+    background: #FFFFFF;
+
+    color: #405563;
+
+    font-size: 29px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 5px 0 #C9DCE1,
+        0 8px 18px rgba(64, 85, 99, 0.08);
+}
+
+.voltar:active {
+    transform: translateY(4px);
+
+    box-shadow:
+        0 1px 0 #C9DCE1;
+}
+
+
+/* ==========================================
+   DIFICULDADE
+========================================== */
+
+.opcoes {
+    width: 100%;
+    max-width: 310px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 17px;
+}
+
+.btn-dificuldade {
+    width: 100%;
+
+    min-height: 65px;
+
+    border-radius: 22px;
+
+    background: #FFFFFF;
+
+    color: #405563;
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 6px 0 #C9DCE1,
+        0 10px 20px rgba(64, 85, 99, 0.07);
+}
+
+.btn-dificuldade:active {
+    transform: translateY(5px);
+
+    box-shadow:
+        0 1px 0 #C9DCE1;
+}
+
+.btn-dificuldade.selecionado {
+    background: #65D5D0;
+
+    color: #405563;
+
+    box-shadow:
+        0 6px 0 #4EB5B1,
+        0 10px 20px rgba(64, 85, 99, 0.10);
+}
+
+
+/* ==========================================
+   AJUSTES
+========================================== */
+
+.ajustes {
+    width: 100%;
+    max-width: 350px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 17px;
+}
+
+.ajuste {
+    width: 100%;
+
+    min-height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #FFFFFF;
+
+    padding: 15px 18px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 6px 0 #C9DCE1,
+        0 10px 20px rgba(64, 85, 99, 0.07);
+}
+
+.ajuste p {
+    font-size: 19px;
+
+    font-weight: 800;
+
+    color: #405563;
+}
+
+
+/* ==========================================
+   CONTADOR DE PEÇAS
+========================================== */
+
+.contador {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.contador button {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: #FFD96A;
+
+    color: #405563;
+
+    font-size: 27px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 3px 0 #D1AE48;
+}
+
+.contador button:active {
+    transform: scale(0.92);
+}
+
+.contador span {
+    min-width: 28px;
+
+    text-align: center;
+
+    font-size: 21px;
+
+    font-weight: 800;
+
+    color: #405563;
+}
+
+
+/* ==========================================
+   TOGGLES
+========================================== */
+
+.toggle {
+    min-width: 70px;
+
+    height: 42px;
+
+    padding: 0 14px;
+
+    border-radius: 25px;
+
+    background: #E5ECEE;
+
+    color: #405563;
+
+    font-size: 16px;
+
+    font-weight: 800;
+}
+
+.toggle[data-ligado="true"] {
+    background: #A8DC78;
+
+    color: #405563;
+}
+
+
+/* ==========================================
+   CONTATO
+========================================== */
+
+.btn-contato {
+    width: auto;
+    min-height: 38px;
+    padding: 7px 18px;
+    margin-top: 28px;
+
+    border-radius: 15px;
+
+    background: #EAF4F5;
+    color: #78909C;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    box-shadow: 0 3px 0 #D6E5E8;
+}
+
+.btn-contato:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #D6E5E8;
+}
+
+
+/* ==========================================
+   TELA CONTATO
+========================================== */
+
+#telaContato {
+    justify-content: center;
+    padding-top: 0;
+}
+
+#telaContato h2 {
+    margin-bottom: 18px;
+    font-size: 36px;
+}
+
+#telaContato .texto-contato {
+    margin-top: 0;
+    margin-bottom: 28px;
+
+    color: #657B84;
+
+    font-size: 20px;
+    line-height: 1.4;
+    font-weight: 600;
+
+    text-align: center;
+}
+
+.creditos-contato {
+    width: 100%;
+    max-width: 340px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 22px;
+}
+
+.credito {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 7px;
+
+    text-align: center;
+}
+
+.credito strong {
+    color: #405563;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.credito a {
+    display: inline-block;
+
+    padding: 9px 18px;
+
+    border-radius: 15px;
+
+    background: #EAF4F5;
+    color: #6F8992;
+
+    font-size: 18px;
+    font-weight: 800;
+
+    text-decoration: none;
+
+    box-shadow: 0 3px 0 #D6E5E8;
+}
+
+.credito a:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #D6E5E8;
+}
+
+/* ==========================================
+   TELA "PRONTOS?"
+========================================== */
+
+#telaProntos h2 {
+    font-size: clamp(38px, 10vw, 52px);
+
+    margin-bottom: 32px;
+}
+
+#btnSim {
+    min-width: 190px;
+
+    min-height: 72px;
+
+    padding: 15px 30px;
+
+    border-radius: 24px;
+
+    background: #FFD96A;
+
+    color: #405563;
+
+    font-size: 27px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 7px 0 #D1AE48,
+        0 12px 25px rgba(64, 85, 99, 0.10);
+}
+
+#btnSim:active {
+    transform: translateY(6px);
+
+    box-shadow:
+        0 1px 0 #D1AE48;
+}
+
+
+/* ==========================================
+   CONTAGEM
+========================================== */
+
+#numeroContagem {
+    font-size: clamp(75px, 22vw, 110px);
+
+    font-weight: 800;
+
+    color: #405563;
+
+    animation: aparecer 0.4s ease;
+}
+
+
+/* ==========================================
+   JOGO
+========================================== */
+
+#telaJogo {
+    background: #F8FCFD;
+}
+
+#setaAtual {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#setaAtual img {
+    width: 230px;
+
+    max-width: 65vw;
+
+    height: auto;
+
+    user-select: none;
+
+    -webkit-user-drag: none;
+
+    animation: aparecerSeta 0.15s ease;
+}
+
+
+/* ==========================================
+   TELA "ACABOU!"
+========================================== */
+
+#telaAcabou h2 {
+    font-size: clamp(48px, 13vw, 70px);
+
+    color: #405563;
+
+    animation: aparecer 0.4s ease;
+}
+
+
+/* ==========================================
+   TELA "HORA DE CONTAR!"
+========================================== */
+
+#telaContar h2 {
+    font-size: clamp(34px, 9vw, 45px);
+
+    margin-bottom: 48px;
+}
+
+#btnContinuar {
+    width: 92px;
+    height: 92px;
+
+    border-radius: 50%;
+
+    background: #A8DC78;
+
+    color: #405563;
+
+    font-size: 44px;
+
+    box-shadow:
+        0 7px 0 #78B653,
+        0 12px 25px rgba(64, 85, 99, 0.10);
+}
+
+#btnContinuar:active {
+    transform: translateY(6px);
+
+    box-shadow:
+        0 1px 0 #78B653;
+}
+
+
+/* ==========================================
+   ANIMAÇÕES
+========================================== */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes aparecerSeta {
+
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes flutuar {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+
+/* ==========================================
+   CELULARES COM TELA PEQUENA
+========================================== */
+
+@media (max-height: 600px) {
+
+    #menu {
+        padding-top: 35px;
+    }
+
+    #menu h1 {
+        top: 0;
+    }
+
+    #menu h1 img {
+        width: min(280px, 75vw);
+    }
+
+    .botoes-menu {
+        gap: 12px;
+    }
+
+    .botoes-menu button,
+    .btn-dificuldade {
+        min-height: 56px;
+
+        font-size: 20px;
+    }
+
+
+    h2 {
+        font-size: 28px;
+
+        margin-bottom: 30px;
+    }
+
+
+    .ajustes {
+        gap: 12px;
+    }
+
+    .ajuste {
+        min-height: 65px;
+
+        padding: 10px 15px;
+    }
+
+    .ajuste p {
+        font-size: 17px;
+    }
+
+
+    .texto-contato {
+        font-size: 17px;
+
+        margin-bottom: 22px;
+    }
+
+    .btn-entrar-contato,
+    .btn-contato {
+        min-height: 56px;
+
+        font-size: 19px;
+    }
+
+
+    #setaAtual img {
+        width: 180px;
+    }
+
+
+    #menu::after {
+        bottom: 10px;
+
+        font-size: 11px;
+    }
+}

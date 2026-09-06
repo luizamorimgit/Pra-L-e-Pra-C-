@@ -1,0 +1,23 @@
+{
+    "name": "← Pra Lá e Pra Cá →",
+    "short_name": "Pra Lá e Pra Cá",
+    "description": "Um jogo simples de atenção e direção.",
+    "start_url": "./",
+    "display": "standalone",
+    "background_color": "#eee5ff",
+    "theme_color": "#eee5ff",
+    "orientation": "portrait-primary",
+
+    "icons": [
+        {
+            "src": "icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
