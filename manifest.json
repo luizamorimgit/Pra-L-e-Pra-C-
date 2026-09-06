@@ -4,8 +4,8 @@
     "description": "Um jogo simples de atenção e direção.",
     "start_url": "./",
     "display": "standalone",
-    "background_color": "#eee5ff",
-    "theme_color": "#eee5ff",
+    "background_color": "#F8FCFD",
+    "theme_color": "#F8FCFD",
     "orientation": "portrait-primary",
 
     "icons": [
